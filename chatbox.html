@@ -1,0 +1,43 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+    <form method="POST" name="contactForm form-container" class="contactForm form-container"
+                        action="https://formsubmit.co/contact@legalkes.net" target="dummyframemain" onsubmit="showMessageMain()">
+        <h3 style="margin: 0;">Kontak Kami</h3>
+
+        <label class="label" for="name">Nama Lengkap</label>
+        <input type="text" class="form-control" name="name" id="name" required placeholder="Nama Lengkap">
+
+        <label class="label" for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" required placeholder="Email">
+
+        <label class="label" for="phone">No. HP</label>
+        <input type="text" class="form-control" name="phone" id="phone" required placeholder="Phone">
+
+        <label for="message"><b>Pesan</b></label>
+        <textarea name="message" class="form-control" id="message" cols="30" rows="4" required placeholder="Pesan"></textarea>
+        <div id="submitted-contact-main" class="submitting" style="display: none;"></div>
+        <iframe name="dummyframemain" id="dummyframemain" style="display: none;"></iframe>
+
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+    </div>
+
+    <script>
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+
+    function showMessageMain() {
+        $("#submitted-contact-main").show().html("Pesan anda sudah terkirim!");
+        console.log('this runs');
+
+        }
+    </script>
